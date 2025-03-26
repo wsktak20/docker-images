@@ -29,8 +29,8 @@ jobs:
         run: |
           # 单镜像同步示例（公开镜像，无需Docker Hub登录）
           skopeo copy \
-            docker://docker.io/nginx:latest \
-            docker://crpi-xgj9z1app199hujj.cn-shanghai.personal.cr.aliyuncs.com/wsk_services/nginx:latest \
+            docker://docker.io/mysql:5.7.6 \
+            docker://crpi-xgj9z1app199hujj.cn-shanghai.personal.cr.aliyuncs.com/wsk_services/mysql:5.7.6 \
             --dest-creds=${{ secrets.ALIYUN_USERNAME }}:${{ secrets.ALIYUN_PASSWORD }}
 
           # 私有镜像需添加 --src-creds
