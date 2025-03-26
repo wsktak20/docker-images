@@ -20,7 +20,7 @@ jobs:
       - name: Login to Aliyun ACR
         uses: docker/login-action@v2
         with:
-          registry: your-personal-registry.cn-shanghai.cr.aliyuncs.com  # 替换为你的个人ACR地址
+          registry: crpi-xgj9z1app199hujj.cn-shanghai.personal.cr.aliyuncs.com  # 替换为你的个人ACR地址
           username: ${{ secrets.ALIYUN_USERNAME }}  # 阿里云账号（通常是RAM子账号）
           password: ${{ secrets.ALIYUN_PASSWORD }}  # 阿里云密码或临时令牌
 
@@ -30,7 +30,7 @@ jobs:
           # 单镜像同步示例（公开镜像，无需Docker Hub登录）
           skopeo copy \
             docker://docker.io/nginx:latest \
-            docker://your-personal-registry.cn-shanghai.cr.aliyuncs.com/your-namespace/nginx:latest \
+            docker://crpi-xgj9z1app199hujj.cn-shanghai.personal.cr.aliyuncs.com/wsk_services/nginx:latest \
             --dest-creds=${{ secrets.ALIYUN_USERNAME }}:${{ secrets.ALIYUN_PASSWORD }}
 
           # 私有镜像需添加 --src-creds
