@@ -31,8 +31,8 @@ jobs:
           skopeo copy \
             --override-arch=amd64 \
             --override-os=linux \
-            docker://docker.io/openjdk:8 \
-            docker://crpi-xgj9z1app199hujj.cn-shanghai.personal.cr.aliyuncs.com/wsk_services/openjdk:8 \
+            docker://docker.io/openjdk:17 \
+            docker://crpi-xgj9z1app199hujj.cn-shanghai.personal.cr.aliyuncs.com/wsk_services/openjdk:17 \
             --dest-creds=${{ secrets.ALIYUN_USERNAME }}:${{ secrets.ALIYUN_PASSWORD }}
 
           # 私有镜像需添加 --src-creds
